@@ -1,3 +1,5 @@
+项目下载后,执行一次Convert to faceted form,然后修改gradle-wrapper.properties文件,将distributionUrl修改为
+distributionUrl=file\:///C:/gradle-2.13-all.zip,这个文件根据本地设置随机应变.最后执行一次Add Gradle Nature,这个要先安装Gradle的插件,buildship.
 1. MasterSpringMvcApplication.java 右键 -> run as Spring Boot App,然后console会输出日志
 2. 在浏览器里输入http://localhost:8080/ 即可.
 3. 停止和重启服务器的选项在于IDE工具栏里的红色方块.
