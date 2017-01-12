@@ -3,8 +3,8 @@ buildscript {
 		springBootVersion = '1.4.3.RELEASE'
 	}
 	repositories {
-		maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
-		//mavenCentral()
+		//maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+		mavenCentral()
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -23,13 +23,22 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 repositories {
-	maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
-	//mavenCentral()
+	//maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+	mavenCentral()
 }
 
 
 dependencies {
 	//compile('org.springframework.boot:spring-boot-starter')
 	compile("org.springframework.boot:spring-boot-starter-web")
+	compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	compile 'org.springframework.boot:spring-boot-starter-social-twitter'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+eclipse {
+	classpath {
+		containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
+		containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8'
+	}
 }
