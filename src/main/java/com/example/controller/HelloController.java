@@ -18,11 +18,20 @@ public class HelloController {
 	@Autowired
 	private Twitter twitter;
 
+//	@RequestMapping("/")
+//	public String hello(@RequestParam(defaultValue = "subway") String search, Model model) {
+//		SearchResults searchResults = twitter.searchOperations().search(search);
+//		List<String> tweets = searchResults.getTweets().stream().map(Tweet::getText).collect(Collectors.toList());
+//		model.addAttribute("tweets", tweets);
+//		return "resultPage";
+//	}
+	
 	@RequestMapping("/")
 	public String hello(@RequestParam(defaultValue = "subway") String search, Model model) {
 		SearchResults searchResults = twitter.searchOperations().search(search);
-		List<String> tweets = searchResults.getTweets().stream().map(Tweet::getText).collect(Collectors.toList());
+		List<Tweet> tweets = searchResults.getTweets();
 		model.addAttribute("tweets", tweets);
+		model.addAttribute("search", search);
 		return "resultPage";
 	}
 }
