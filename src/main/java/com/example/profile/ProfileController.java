@@ -1,4 +1,4 @@
-package com.example.controller;
+package com.example.profile;
 
 import java.util.Locale;
 
@@ -12,14 +12,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.date.USLocalDateFormatter;
-import com.example.doman.ProfileForm;
 
 @Controller
 public class ProfileController {
 	
-	@ModelAttribute("profileForm")
+	
 	@RequestMapping("/profile")
-	public String displayProfile() {
+	public String displayProfile(ProfileForm profileForm) {
 		return "profile/profilePage";
 	}
 

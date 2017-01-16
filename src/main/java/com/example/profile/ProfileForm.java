@@ -1,4 +1,4 @@
-package com.example.doman;
+package com.example.profile;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -10,6 +10,8 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
+import com.example.date.PastLocalDate;
+
 public class ProfileForm {
 	
 	@Size(min = 2)
@@ -20,6 +22,7 @@ public class ProfileForm {
 	private String email;
 	
 	@NotNull
+	@PastLocalDate
 	private LocalDate birthDate;
 	
 	@NotEmpty
