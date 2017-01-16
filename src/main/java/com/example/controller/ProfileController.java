@@ -5,6 +5,7 @@ import java.util.Locale;
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,8 @@ import com.example.doman.ProfileForm;
 
 @Controller
 public class ProfileController {
+	
+	@ModelAttribute("profileForm")
 	@RequestMapping("/profile")
 	public String displayProfile() {
 		return "profile/profilePage";
