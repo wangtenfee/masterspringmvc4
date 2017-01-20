@@ -21,11 +21,12 @@ public class ProfileController {
 	
 	@Autowired
 	public ProfileController(UserProfileSession userProfileSession) {
-	this.userProfileSession = userProfileSession;
+		this.userProfileSession = userProfileSession;
 	}
+
 	@ModelAttribute
 	public ProfileForm getProfileForm() {
-	return userProfileSession.toForm();
+		return userProfileSession.toForm();
 	}
 		
 	@RequestMapping("/profile")
@@ -46,7 +47,8 @@ public class ProfileController {
 		}
 		//System.out.println("save ok" + profileForm);
 		userProfileSession.saveForm(profileForm);
-		return "redirect:/profile";
+		return "redirect:/search/mixed;keywords=" + String.join(",",profileForm.getTastes());
+		//return "redirect:/profile";
 	}
 	
 	@ModelAttribute("dateFormat")
