@@ -35,13 +35,7 @@ public class PictureUploadController {
 	private Resource picturesDir;
 	private Resource anonymousPicture;
 	private MessageSource messageSource;
-
 	private UserProfileSession userProfileSession;
-
-	@Autowired
-	public PictureUploadController(UserProfileSession userProfileSession) {
-		this.userProfileSession = userProfileSession;
-	}
 
 	@ModelAttribute
 	public ProfileForm getProfileForm() {
@@ -49,10 +43,11 @@ public class PictureUploadController {
 	}
 
 	@Autowired
-	public PictureUploadController(PictureUploadProperties uploadProperties, MessageSource messageSource) {
+	public PictureUploadController(PictureUploadProperties uploadProperties, MessageSource messageSource,UserProfileSession userProfileSession) {
 		picturesDir = uploadProperties.getUploadPath();
 		anonymousPicture = uploadProperties.getAnonymousPicture();
 		this.messageSource = messageSource;
+		this.userProfileSession = userProfileSession;
 	}
 
 	@ModelAttribute("picturePath")
