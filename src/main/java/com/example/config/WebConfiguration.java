@@ -24,8 +24,13 @@ import com.example.date.USLocalDateFormatter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 @Configuration
 @EnableConfigurationProperties({PictureUploadProperties.class})
+@EnableSwagger2
 public class WebConfiguration extends WebMvcConfigurerAdapter {
 
 	@Override
@@ -80,5 +85,10 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
 		ObjectMapper objectMapper = builder.createXmlMapper(false).build();
 		objectMapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
 		return objectMapper;
+	}
+	
+	@Bean
+	public Docket userApi() {
+	return new Docket(DocumentationType.SWAGGER_2).select().paths(path -> path.startsWith("/api/")).build();
 	}
 }
