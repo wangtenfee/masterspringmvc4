@@ -1,10 +1,11 @@
 buildscript {
 	ext {
 		springBootVersion = '1.4.3.RELEASE'
+		//springBootVersion = '1.2.5.RELEASE'
 	}
 	repositories {
-		//maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
-		mavenCentral()
+		maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+		//mavenCentral()
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -13,7 +14,8 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
-apply plugin: 'org.springframework.boot'
+//apply plugin: 'org.springframework.boot'
+apply plugin: 'spring-boot'
 
 jar {
 	baseName = 'masterSpringMvc'
@@ -23,8 +25,8 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 repositories {
-	//maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
-	mavenCentral()
+	maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+	//mavenCentral()
 }
 
 
@@ -33,14 +35,25 @@ dependencies {
 	compile("org.springframework.boot:spring-boot-starter-web")
 	compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	compile 'org.springframework.boot:spring-boot-starter-social-twitter'
+	
 	compile 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
 	//compile 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml' //响应输出格式为xml
+	
 	compile 'org.springframework.boot:spring-boot-starter-security'
+	compile 'org.thymeleaf.extras:thymeleaf-extras-springsecurity4'
+	//compile 'org.thymeleaf.extras:thymeleaf-extras-springsecurity3'
+	
+	
+	
 
 	compile 'org.webjars:materializecss:0.96.0'
 	compile 'org.webjars:jquery:2.1.4'
 	compile 'io.springfox:springfox-swagger2:2.1.2'
 	compile 'io.springfox:springfox-swagger-ui:2.1.2'
+	compile group: 'jstl', name: 'jstl', version: '1.2'
+	compile group: 'taglibs', name: 'standard', version: '1.1.2'
+	
+	
 
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

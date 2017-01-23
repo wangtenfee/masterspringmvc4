@@ -14,3 +14,7 @@ http post http://localhost:8080/api/users email=geo@springmvc.com birthDate=2011
 http get http://localhost:8080/api/users
 
 2. http://localhost:8080/api/search/mixed;keywords=springFramework
+
+第六章
+http GET 'http://localhost:8080/api/users' -a user:user -p=h
+http GET 'http://localhost:8080/api/users' -a admin:admin -p=h
