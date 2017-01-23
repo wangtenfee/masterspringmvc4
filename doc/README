@@ -5,4 +5,12 @@ distributionUrl=file\:///C:/gradle-2.13-all.zip,这个文件根据本地设置�
 3. 停止和重启服务器的选项在于IDE工具栏里的红色方块.
 
 1. http://localhost:8080/profile
-2. 
+第5章
+1. http://localhost:8080/api/users
+
+使用httpie
+http get http://localhost:8080/api/users
+http post http://localhost:8080/api/users email=geo@springmvc.com birthDate=2011-12-12 tastes:='["spring"]'
+http get http://localhost:8080/api/users
+
+2. http://localhost:8080/api/search/mixed;keywords=springFramework

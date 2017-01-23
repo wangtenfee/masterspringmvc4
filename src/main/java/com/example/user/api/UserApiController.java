@@ -3,6 +3,7 @@ package com.example.user.api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.error.EntityNotFoundException;
@@ -13,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
+@Secured("ROLE_ADMIN")
 public class UserApiController {
 
 	private UserRepository userRepository;
