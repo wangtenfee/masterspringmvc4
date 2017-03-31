@@ -1,0 +1,7 @@
+1. 要先在eclipe上安装gradle的插件,参考: https://github.com/eclipse/buildship/blob/master/docs/user/Installation.md
+2. 即是help > install new software > Work with里填上面那个链接,然后点击add,给这个链接起个名字,比如说gradle,然后就一路安装即可.
+3. 在eclipse上安装好gradle的插件之后就可以引入项目了.
+4. 先引入git项目,这个项目的路径是: https://github.com/wangtenfee/masterspringmvc4 
+5. 然后在eclipse里将这个项目删除,不要删除文件,只删除项目即可.然后再import  gradle项目,将该项目引入后即是一个gradle项目了.
+6. 第一次启动时,定位到src/main/java/com/example/MasterSpringMvcApplication.java文件,将文件运行run as java  application即可.
+7. 首次运行时应该会失败,因为这个项目依赖了redis,而redis的地址写的是localhost,如果本地没有安装redis的话,项目就会启动失败了.
