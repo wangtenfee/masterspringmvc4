@@ -7,7 +7,7 @@ distributionUrl=file\:///C:/gradle-2.13-all.zip,这个文件根据本地设置�
 1. http://localhost:8080/profile
 第5章
 1. http://localhost:8080/api/users
-
+  
 使用httpie
 http get http://localhost:8080/api/users
 http post http://localhost:8080/api/users email=geo@springmvc.com birthDate=2011-12-12 tastes:='["spring"]'
